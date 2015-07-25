@@ -1,0 +1,11 @@
+$ch = curl_init();
+$url = 'https://ssg-api.shop.com:443/hello-world';
+$queryParams = '?' . urlencode('apikey') . '=' . urlencode('l7xx5fa60d8b9d1149cc990a2dfd5a7fa3be');
+curl_setopt($ch, CURLOPT_URL, $url . $queryParams);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($ch, CURLOPT_HEADER, FALSE);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+$response = curl_exec($ch);
+curl_close($ch);
+
+var_dump($response);
